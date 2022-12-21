@@ -1,6 +1,6 @@
 #Definición de vistas
 from django.shortcuts import render
-
+from django.views.generic.edit import CreateView
 
 #página de inicio
 def inicio(request):
@@ -11,3 +11,5 @@ def inicio(request):
 #página de login
 def login(request):
     return render(request,"login.html",{})
+
+#class Registro(CreateView)
