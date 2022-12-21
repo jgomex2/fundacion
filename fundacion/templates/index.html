@@ -29,9 +29,16 @@
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">
               <a class="link-secondary" href="#" aria-label="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Buscar</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
               </a>
-              <a class="btn btn-sm btn-outline-secondary" href="#">Iniciar sesión</a>
+               <p>
+                  {% if user.is_authenticated %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">Cerrar sesión</a>
+                  {% else %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">Iniciar sesión</a>
+                  {% endif %}
+               </p> 
+              
             </div>
           </div>
         </header>
@@ -267,7 +274,7 @@
       <footer class="blog-footer">
         <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         <p>
-          <a href="#">Back to top</a>
+          <a href="#">Ir arriba</a>
         </p>
       </footer>
       
