@@ -12,4 +12,9 @@ def inicio(request):
 def login(request):
     return render(request,"login.html",{})
 
+def logout(request):
+    template_name = "index.html"
+    contexto={}
+    return render(request,template_name,contexto)
+
 #class Registro(CreateView)
